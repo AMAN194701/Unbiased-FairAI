@@ -1,23 +1,14 @@
 # ⚖️ Unbiased-FairAI
+**Detecting and mitigating bias in ML models for fair, transparent, and explainable automated decision-making.**
 
-> **Detecting and mitigating bias in ML models for fair, transparent, and explainable automated decision-making.**
-
-![Status](https://img.shields.io/badge/status-in--progress-yellow)
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![Gemini](https://img.shields.io/badge/Google-Gemini%20AI-orange)
-![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
-![Cloud](https://img.shields.io/badge/Deploy-Google%20Cloud%20Run-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-green)
+> Google Solution Challenge 2026 | Built by Aman Kushwaha
 
 ---
 
 ## 🚨 The Problem
+ML models silently discriminate. A model predicting loan approval or hiring decisions looks fair on the surface — but systematically disadvantages women or minorities. Nobody notices. Nobody fixes it.
 
-Automated ML models silently discriminate.
-
-A model predicting loan approval, hiring decisions, or criminal risk **looks fair on the surface** — but buried inside are patterns that systematically disadvantage women, minorities, or low-income groups. Nobody notices. Nobody fixes it.
-
-**Unbiased-FairAI is built to detect and fix exactly that.**
+**Unbiased-FairAI detects and fixes exactly that.**
 
 ---
 
@@ -25,11 +16,24 @@ A model predicting loan approval, hiring decisions, or criminal risk **looks fai
 
 | Feature | Description |
 |---|---|
-| 🔍 Bias Detection | Measures demographic parity, equalized odds across groups |
-| 📊 Fairness Dashboard | Visual before/after comparison of model fairness |
-| 🔧 Bias Mitigation | Applies reweighing + threshold optimization to fix bias |
-| 🤖 Gemini Explainer | Plain English explanation of WHY the model is biased |
-| 📈 SHAP Analysis | Shows which features are driving unfair decisions |
+| 📊 Pre-Model Audit | Detects bias in raw data before training |
+| 🤖 Model Training | RandomForest trained on Adult Income dataset |
+| ⚖️ Fairness Metrics | Demographic parity before & after mitigation |
+| 🔧 Bias Mitigation | ExponentiatedGradient reduces bias by 98.5% |
+| 🤖 Gemini Explainer | Plain-English explanation of WHY model is biased |
+| 🔍 What-If Simulator | Change gender/race — see if prediction changes |
+| 📋 Audit Log | Full downloadable CSV audit trail |
+
+---
+
+## 📊 Results
+
+| Metric | Value |
+|---|---|
+| Model Accuracy | 85%+ |
+| Demographic Parity Before | 0.1949 |
+| Demographic Parity After | 0.0029 |
+| Bias Reduction | **98.5%** |
 
 ---
 
@@ -37,66 +41,30 @@ A model predicting loan approval, hiring decisions, or criminal risk **looks fai
 
 | Layer | Technology |
 |---|---|
-| ML & Fairness | Python, scikit-learn, fairlearn |
-| Explainability | SHAP |
+| ML & Fairness | Python, Scikit-learn, Fairlearn |
 | AI Explanation | Google Gemini API |
 | Frontend | Streamlit |
-| Deployment | Google Cloud Run |
-
----
-
----
-
-## 🧠 Dataset
-
-**Adult Income Dataset (UCI)**
-- Task: Predict whether a person earns >$50K/year
-- Known bias: gender and racial disparities in predictions
-- Size: 32,561 records, 15 features
-
----
-
-## 👥 Target Users
-
-- HR teams using AI for hiring decisions
-- Startups building ML-powered products
-- Researchers working on ethical AI
+| Data | UCI Adult Income Dataset |
 
 ---
 
 ## 🚀 Getting Started
+
 ```bash
-# Clone the repo
 git clone https://github.com/AMAN194701/Unbiased-FairAI
 cd Unbiased-FairAI
-
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate       # Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate
 pip install -r requirements.txt
-
-# Run the app
+cp .env.example .env  # Add your Gemini API key
 streamlit run src/app.py
 ```
 
 ---
 
-## 🗺️ Roadmap
-
-- [x] Project setup and repository structure
-- [ ] Exploratory data analysis
-- [ ] Bias detection pipeline
-- [ ] Fairness metrics dashboard
-- [ ] Bias mitigation using reweighing
-- [ ] Gemini API integration
-- [ ] Streamlit UI
-- [ ] Google Cloud Run deployment
-- [ ] Demo video
+## 🔑 Environment VariablesGEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
 ## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License
