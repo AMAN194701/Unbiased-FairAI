@@ -62,7 +62,9 @@ streamlit run src/app.py
 
 ---
 
-## 🔑 Environment VariablesGEMINI_API_KEY=your_gemini_api_key_here
+## 🔑 Environment Variables
+
+GEMINI_API_KEY=your_gemini_api_key_here
 
 ---
 
